@@ -124,6 +124,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Siniflar\Admin.cs" />
+    <Compile Include="Models\Siniflar\Adres.cs" />
+    <Compile Include="Models\Siniflar\AnaSayfa.cs" />
+    <Compile Include="Models\Siniflar\Blog.cs" />
+    <Compile Include="Models\Siniflar\Hakkimizda.cs" />
+    <Compile Include="Models\Siniflar\Iletisim.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
