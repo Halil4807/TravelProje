@@ -7,7 +7,8 @@ namespace TravelProje.Models.Siniflar
 {
     public class BlogYorum
     {
-        public IEnumerable<Blog> DegerBlog { get; set; }
-        public IEnumerable<Yorumlar> DegerYorumlar { get; set; }
+        public IEnumerable<Blog> Bloglar { get; set; }
+        public IEnumerable<Blog> SonBlog { get; set; }
+        public IEnumerable<Yorumlar> Yorumlar { get; set; }
     }
 }

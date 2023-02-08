@@ -1,5 +1,4 @@
-﻿@using TravelProje.Models.Siniflar;
-@model List<Blog>
+﻿@model TravelProje.Models.Siniflar.BlogYorum
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -41,7 +40,7 @@
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var item in Model)
+                @foreach (var item in Model.Bloglar)
                 {
                     <div class="single-grid">
                         <img src="~/images/@item.BlogResim" style="width: 500px; height: auto" alt="" />
@@ -59,10 +58,10 @@
                 <div class="recent">
                     <h3>Son Bloglar</h3>
                     <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
+                        @foreach (var item in Model.SonBlog)
+                        {
+                            <li><a href="/Blog/BlogDetay/@item.ID">@item.Baslik</a></li>
+                        }
                     </ul>
                 </div>
                 <div class="comments">
