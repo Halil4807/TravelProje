@@ -1,18 +1,12 @@
-﻿
+﻿@using TravelProje.Models.Siniflar;
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+
+
 <head>
-    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,19 +20,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!----//webfonts---->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--end slider -->
-    <!--script-->
-    <script type="text/javascript" src="~/web2/js/move-top.js"></script>
-    <script type="text/javascript" src="~/web2/js/easing.js"></script>
-    <!--/script-->
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
-            });
-        });
-    </script>
-    <!---->
 
 </head>
 <body>
@@ -61,14 +42,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                <div class="single-grid">
-                    <img src="~/images/post1.jpg" style="width: 500px; height: auto" alt="" />
+                @foreach (var item in Model)
+                {
+                    <div class="single-grid">
+                        <img src="~/images/@item.BlogResim" style="width: 500px; height: auto" alt="" />
+                        <br /><br />
+                        <a href="#">@item.Baslik</a>  <sub style="color: #778899; ">@item.Tarih</sub>
+                        <p>
+                            @item.Aciklama
+                        </p>
+                    </div>
                     <br /><br />
-                    <a href="#">Paris'te Bir Gece</a>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </p>
-                </div>
+                }
             </div>
 
             <div class="col-md-4 side-content">
