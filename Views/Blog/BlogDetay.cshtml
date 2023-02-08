@@ -1,5 +1,4 @@
-﻿@using TravelProje.Models.Siniflar
-@model List<Blog>
+﻿@model TravelProje.Models.Siniflar.BlogYorum
 @{
     ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +25,7 @@
     <div class="container">
         <div class="col-md-8 single-main">
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.DegerBlog)
             {
                 <div class="single-grid">
                     <img src="~/images/@item.BlogResim" style="width: 500px; height: auto" alt="" />
@@ -34,29 +33,42 @@
                     @item.Baslik  <sub style="color: #778899; ">@item.Tarih</sub>
                     <p>
                         @item.Aciklama
+
                     </p>
                 </div>
                 <br /><br />
             }
-            @* Yorum *@
-            <ul class="comment-list">
-                <h5 class="post-author_head"></h5>
-                <li>
-                    <img src="~/images/avatar.png" class="img-responsive" alt="">
-                    <div class="desc">
-                        <p></p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-            </ul>
+            @if (!Model.DegerYorumlar.Any())
+            {
+                <ul class="comment-list">
+                    <h5 class="post-author_head" style="color:red">İlk Yorumu siz yapmak istermisiniz</h5>
+                </ul>
+            }
+            else
+            {
+                foreach (var item in Model.DegerYorumlar)
+                {
+                    <ul class="comment-list">
+                        <h5 class="post-author_head">@item.KullaniciAdi</h5>
+                        <li>
+                            <img src="~/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p><font size="3">@item.Yorum</font></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
+            }
+
+
             <div class="content-form">
-                <h3>Leave a comment</h3>
+                <h3>Yorum Yapın</h3>
                 <form>
-                    <input type="text" placeholder="Name" required />
+                    <input type="text" placeholder="Kullanıcı Adı" required />
                     <input type="text" placeholder="Email" required />
-                    <input type="text" placeholder="Phone" required />
-                    <textarea placeholder="Message"></textarea>
-                    <input type="submit" value="SEND" />
+                    <textarea placeholder="Yorum"></textarea>
+                    <input type="submit" value="Yorum Yap" />
                 </form>
             </div>
         </div>

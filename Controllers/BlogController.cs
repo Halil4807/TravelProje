@@ -16,10 +16,13 @@ namespace TravelProje.Controllers
             var blog = c.Blogs.ToList();
             return View(blog);
         }
+        BlogYorum by = new BlogYorum();
         public ActionResult BlogDetay(int id)
         {
-            var blogbul = c.Blogs.Where(x => x.ID == id).ToList();
-            return View(blogbul);
+            //var blogbul = c.Blogs.Where(x => x.ID == id).ToList();
+            by.DegerBlog = c.Blogs.Where(x => x.ID == id).ToList();
+            by.DegerYorumlar = c.Yorumlars.Where(x => x.Blogid== id).ToList();
+            return View(by);
         }
     }
 }
