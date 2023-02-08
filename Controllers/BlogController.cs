@@ -15,7 +15,8 @@ namespace TravelProje.Controllers
         public ActionResult Index()
         {
             blog.Bloglar = c.Blogs.ToList();
-            blog.SonBlog = c.Blogs.OrderByDescending(x=>x.Tarih).Take(3).ToList();
+            blog.SonBlog = c.Blogs.OrderByDescending(x => x.Tarih).Take(3).ToList();
+            blog.SonYorumlar = c.Yorumlars.OrderByDescending(x => x.ID).Take(3).ToList();
             return View(blog);
         }
         public ActionResult BlogDetay(int id)
