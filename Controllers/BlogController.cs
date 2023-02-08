@@ -16,5 +16,9 @@ namespace TravelProje.Controllers
             var blog = c.Blogs.ToList();
             return View(blog);
         }
+        public ActionResult BlogDetay(int id)
+        {
+            return View();
+        }
     }
 }
