@@ -118,6 +118,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +170,25 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="web2\about.html" />
+    <Content Include="web2\contact.html" />
+    <Content Include="web2\css\bootstrap.css" />
+    <Content Include="web2\css\style.css" />
+    <Content Include="images\avatar.png" />
+    <Content Include="images\icon3.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\man.jpg" />
+    <Content Include="images\more.png" />
+    <Content Include="images\post1.jpg" />
+    <Content Include="images\post2.jpg" />
+    <Content Include="images\post3.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="web2\index.html" />
+    <Content Include="web2\js\easing.js" />
+    <Content Include="web2\js\jquery.min.js" />
+    <Content Include="web2\js\move-top.js" />
+    <Content Include="web2\single.html" />
+    <Content Include="web2\w3layouts-License.txt" />
     <Content Include="web\about.html" />
     <Content Include="web\contact.html" />
     <Content Include="css\slider.css" />
@@ -221,6 +241,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
