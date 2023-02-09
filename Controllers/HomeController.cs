@@ -28,5 +28,9 @@ namespace TravelProje.Controllers
 
             return View();
         }
+        public PartialViewResult PartialSon3Gezi()
+        {
+            return PartialView();
+        }
     }
 }
