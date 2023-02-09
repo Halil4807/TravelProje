@@ -33,5 +33,10 @@ namespace TravelProje.Controllers
             var gezi = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
             return PartialView(gezi);
         }
+        public PartialViewResult PartialSon10Gezi()
+        {
+            var gezi = c.Blogs.OrderByDescending(x => x.ID).Take(10).ToList();
+            return PartialView(gezi);
+        }
     }
 }
