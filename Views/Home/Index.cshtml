@@ -1,4 +1,7 @@
-﻿@{
+﻿@using TravelProje.Models.Siniflar
+@model List<Blog>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -14,7 +17,7 @@
                             <img src="~/images/glass.png" alt="">
                         </div>
                         <div class="grid1-desc">
-                            <p>Restaurants</p>
+                            <p>Restorantlar</p>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -23,7 +26,7 @@
                             <img src="~/images/flight.png" alt="">
                         </div>
                         <div class="grid1-desc">
-                            <p>Flights</p>
+                            <p>Uçuşlar</p>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -32,7 +35,7 @@
                             <img src="~/images/group.png" alt="">
                         </div>
                         <div class="grid1-desc">
-                            <p>Things to do</p>
+                            <p>Aktiviteler</p>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -41,20 +44,20 @@
                             <img src="~/images/key.png" alt="">
                         </div>
                         <div class="grid1-desc">
-                            <p>Vacation Rents</p>
+                            <p>Araba Kiralama</p>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
                 </div>
                 <div class="header_bottom_right_images">
-
                     <div class="slider">
                         <ul class="rslides" id="slider1">
-                            <li><img src="~/images/img1.jpg" alt=""></li>
-                            <li><img src="~/images/img2.jpg" alt=""></li>
-                            <li><img src="~/images/img3.jpg" alt=""></li>
-                            <li><img src="~/images/img4.jpg" alt=""></li>
+                            @foreach (var item in Model)
+                            {
+                                <li><a href="/Blog/BlogDetay/@item.ID"><img src="~/images/@item.BlogResim" style="width: 650px; height: 350px" title="@item.Baslik"></a></li>
+                            }
+                            
                         </ul>
                     </div>
                 </div>
