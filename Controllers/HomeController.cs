@@ -13,7 +13,7 @@ namespace TravelProje.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var bloglar= c.Blogs.ToList();
+            var bloglar = c.Blogs.ToList();
             return View(bloglar);
         }
 
@@ -30,7 +30,8 @@ namespace TravelProje.Controllers
         }
         public PartialViewResult PartialSon3Gezi()
         {
-            return PartialView();
+            var gezi = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+            return PartialView(gezi);
         }
     }
 }

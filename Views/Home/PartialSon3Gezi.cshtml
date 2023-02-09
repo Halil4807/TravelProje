@@ -1,37 +1,19 @@
-﻿<div class="con-bot">
-    <div class="left">
-        <div class="bot-left">
-            <img src="~/images/pic.jpg" alt="" />
-        </div>
-        <div class="left-text">
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$1024.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
-        </div>
-    </div>
-    <div class="left">
-        <div class="bot-left">
-            <img src="~/images/pic1.jpg" alt="" />
-        </div>
-        <div class="left-text">
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$900.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
-        </div>
-    </div>
-    <div class="right">
-        <div class="bot-left">
-            <img src="~/images/pic2.jpg" alt="" />
-        </div>
-        <div class="left-text">
+﻿@using TravelProje.Models.Siniflar
+@model List<Blog>
 
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$924.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
+<div class="con-bot">
+    @foreach (var item in Model)
+    {
+
+    <div class="right" style="margin-left: 15px;">
+        <div class="bot-left">
+            <img src="~/images/@item.BlogResim" style="width: 276px; height: 150px" alt="" />
+        </div>
+        <div class="left-text">
+            <h4>@item.Baslik  <sup style="color:cadetblue">(@item.Tarih.ToString("d"))</sup></h4>
+            <p>@item.Aciklama.Substring(0,250)</p>
+            <p><a href="/Blog/BlogDetay/@item.ID"><span class="read">Devamını Oku>></span></a></p>
         </div>
     </div>
-    <div class="clear"></div>
+    }
 </div>
