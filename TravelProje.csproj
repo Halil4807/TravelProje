@@ -155,6 +155,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\fethiye.jpg" />
+    <Content Include="images\istanbul.jpg" />
+    <Content Include="images\izmir.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -246,6 +249,7 @@
     <Content Include="Views\Blog\BlogDetay.cshtml" />
     <Content Include="Views\Home\PartialSon3Gezi.cshtml" />
     <Content Include="Views\Home\PartialSon10Gezi.cshtml" />
+    <Content Include="Views\Home\PartialOneCikan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

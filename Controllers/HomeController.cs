@@ -13,7 +13,7 @@ namespace TravelProje.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var bloglar = c.Blogs.ToList();
+            var bloglar = c.Blogs.OrderByDescending(x => x.ID).Take(6).ToList();
             return View(bloglar);
         }
 
@@ -36,6 +36,11 @@ namespace TravelProje.Controllers
         public PartialViewResult PartialSon10Gezi()
         {
             var gezi = c.Blogs.OrderByDescending(x => x.ID).Take(10).ToList();
+            return PartialView(gezi);
+        }
+        public PartialViewResult PartialOneCikan()
+        {
+            var gezi = c.Blogs.Where(x=>x.OneCikan==true).OrderByDescending(x => x.ID).Take(6).ToList();
             return PartialView(gezi);
         }
     }

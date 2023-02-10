@@ -1,0 +1,23 @@
+﻿@using TravelProje.Models.Siniflar
+@model List<Blog>
+@{int count = 0;}
+
+
+<div class="padding1">
+    <h4>Our Best Places</h4>
+    <div class="box-left">
+
+        @foreach (var item in Model)
+        {
+            count++;
+            <div class="bot-img">
+                <img src="~/images/@item.BlogResim" style="width:120px;height:80px"  alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@item.Aciklama.Substring(0, 90)</p>
+            </div><div class="clear"></div>
+            
+        }
+    </div>
+</div>
+
