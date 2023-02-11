@@ -16,5 +16,15 @@ namespace TravelProje.Controllers
             var bloglar = c.Blogs.ToList();
             return View(bloglar);
         }
+        [HttpGet]
+        public ActionResult YeniBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniBlog(Blog p)
+        {
+            return View();
+        }
     }
 }
