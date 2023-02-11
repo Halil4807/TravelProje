@@ -1,10 +1,26 @@
-﻿
+﻿@using TravelProje.Models.Siniflar
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
-        <h2>Sidebar Navigation Example</h2>
-        <p>The sidebar with is set with "style="width:25%".</p>
-        <p>The left margin of the page content is set to the same value.</p>
+<h2>Blog Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>BAŞLIK</th>
+        <th>SỈL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Baslik</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+        </tr>
+    }
+</table>
