@@ -22,9 +22,11 @@ namespace TravelProje.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult YeniBlog(Blog p)
+        public ActionResult YeniBlog(Blog blogekle)
         {
-            return View();
+            c.Blogs.Add(blogekle);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
