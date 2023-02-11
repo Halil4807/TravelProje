@@ -28,5 +28,12 @@ namespace TravelProje.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult BlogSil(int id)
+        {
+            var b = c.Blogs.Find(id);
+            c.Blogs.Remove(b);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
