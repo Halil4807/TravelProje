@@ -26,5 +26,19 @@ namespace TravelProje.Controllers
             blog.Yorumlar = c.Yorumlars.Where(x => x.Blogid== id).ToList();
             return View(blog);
         }
+        [HttpGet]
+        public PartialViewResult PartialYorumYap()
+        {
+            c.Blogs.Add(b);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public PartialViewResult PartialYorumYap(Yorumlar yorum)
+        {
+            c.Yorumlars.Add(yorum);
+            c.SaveChanges();
+            return PartialView("Index");
+        }
     }
 }
