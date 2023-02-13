@@ -9,7 +9,8 @@
 @using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
 {
     @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", disabled = "" })
+    //@Html.TextBoxFor(x => x.ID, new { @class = "form-control", disabled = "" }) Alttaki satıla aynı işlemi yapıyor.
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly= "readonly" })
     <br />
     @Html.LabelFor(x => x.Baslik)
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
@@ -21,7 +22,7 @@
     @Html.TextBoxFor(x => x.BlogResim, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama, 10,1, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Aciklama, 10, 1, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.OneCikan)
     //@Html.TextBoxFor(x => x.OneCikan, new { @class = "form-control" })
