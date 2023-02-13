@@ -9,7 +9,7 @@
 @using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
 {
     @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", disabled = "" })
     <br />
     @Html.LabelFor(x => x.Baslik)
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
@@ -22,6 +22,28 @@
     <br />
     @Html.LabelFor(x => x.Aciklama)
     @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.OneCikan)
+    //@Html.TextBoxFor(x => x.OneCikan, new { @class = "form-control" })
+    @Html.DropDownList("kategoriler",
+                 new List<SelectListItem> {
+                     new SelectListItem {
+                         Text="True",
+                         Value="True",
+                         //Selected = true,
+                         // Disabled = true  disable olarak gelsin istersek kullanıyoruz
+                     },
+                     new SelectListItem
+                     {
+                         Text = "False",
+                         Value = "False",
+                     },
+                 }, "Öne Çıkma Durumu Seçiniz", new { @class = "form-control" })
+    
+
     <br />
     <button class="btn btn-primary">Blog Güncelle</button>
 }
