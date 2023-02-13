@@ -21,10 +21,7 @@
     @Html.TextBoxFor(x => x.BlogResim, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Aciklama, 10,1, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.OneCikan)
     //@Html.TextBoxFor(x => x.OneCikan, new { @class = "form-control" })
@@ -42,7 +39,7 @@
                          Value = "False",
                      },
                  }, "Öne Çıkma Durumu Seçiniz", new { @class = "form-control" })
-    
+
 
     <br />
     <button class="btn btn-primary">Blog Güncelle</button>
