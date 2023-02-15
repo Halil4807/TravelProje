@@ -56,6 +56,13 @@ namespace TravelProje.Controllers
             var yorum = c.Yorumlars.ToList();
             return View(yorum);
         }
+        public ActionResult YorumSil(int id)
+        {
+            var yorumsil = c.Yorumlars.Find(id);
+            c.Yorumlars.Remove(yorumsil);
+            c.SaveChanges();
+            return RedirectToAction("YorumListesi");
+        }
         public ActionResult YorumGetir(int id)
         {
             var yorum = c.Blogs.Find(id);
