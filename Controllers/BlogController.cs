@@ -27,18 +27,17 @@ namespace TravelProje.Controllers
             return View(blog);
         }
         [HttpGet]
-        public PartialViewResult PartialYorumYap()
+        public PartialViewResult PartialYorumYap(int id)
         {
-            c.Blogs.Add(b);
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            ViewBag.deger= id;
+            return PartialView();
         }
         [HttpPost]
-        public PartialViewResult PartialYorumYap(Yorumlar yorum)
+        public PartialViewResult PartialYorumYap(Yorumlar y)
         {
-            c.Yorumlars.Add(yorum);
+            c.Yorumlars.Add(y);
             c.SaveChanges();
-            return PartialView("Index");
+            return PartialView();
         }
     }
 }
