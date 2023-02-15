@@ -65,8 +65,16 @@ namespace TravelProje.Controllers
         }
         public ActionResult YorumGetir(int id)
         {
-            var yorum = c.Blogs.Find(id);
+            var yorum = c.Yorumlars.Find(id);
             return View("YorumGetir", yorum);
+        }
+        public ActionResult YorumGuncelle(Yorumlar y)
+        {
+            var yrm = c.Yorumlars.Find(y.ID);
+            yrm.KullaniciAdi = y.KullaniciAdi;
+            yrm.Yorum = y.Yorum;
+            c.SaveChanges();
+            return RedirectToAction("YorumListesi");
         }
     }
 }
