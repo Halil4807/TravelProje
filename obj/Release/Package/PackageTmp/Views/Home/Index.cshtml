@@ -1,0 +1,90 @@
+﻿@using TravelProje.Models.Siniflar
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="header-banner">
+    <div class="wrap">
+        <div class="banner">
+            <div class="indent">
+                <h2 class="indent-left margin-bot"  style="margin-left:100px">Tatil & Seyahat Bloğum</h2>
+                <div class="banner-left">
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/images/glass.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Restorantlar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/images/flight.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Uçuşlar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/images/group.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Aktiviteler</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/images/key.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Araba Kiralama</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="header_bottom_right_images">
+                    <div class="slider">
+                        <ul class="rslides" id="slider1">
+                            @foreach (var item in Model)
+                            {
+                                <li><a href="/Blog/BlogDetay/@item.ID"><img src="~/images/@item.BlogResim" style="width: 650px; height: 350px" title="@item.Baslik"></a></li>
+                            }
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="content">
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="con-top">
+                <h3>Tatil Seyahat Blok Projeme Hoşgeldiniz!</h3>
+                <p>Bu projeyi Şubat ayında Murat Yücedağ'ın eğitim videolarını izleyerek yaptım. Bu proje MVC5 üzerine kurulu dinamik bir web projesi geliştirdik. Umuyorum ki yapmış olduğum bu projeyi beğenirsiniz, keyifli incelemeler, sağlıklı günler.</p>
+            </div>
+            @Html.Action("PartialSon3Gezi", "Home")
+            <div class="grids">
+                <div class="box1">
+                    @Html.Action("PartialSon10Gezi", "Home")
+                    @Html.Action("PartialOneCikan", "Home")
+
+
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

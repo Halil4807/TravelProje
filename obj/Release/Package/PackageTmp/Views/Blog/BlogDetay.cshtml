@@ -1,0 +1,70 @@
+﻿@model TravelProje.Models.Siniflar.BlogYorum
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+</head>
+
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+
+            @foreach (var item in Model.Bloglar)
+            {
+                <div class="single-grid">
+                    <img src="~/images/@item.BlogResim" style="width: 500px; height: auto" alt="" />
+                    <br /><br />
+                    @item.Baslik  <sub style="color: #778899; ">@item.Tarih</sub>
+                    <p>
+                        @item.Aciklama
+
+                    </p>
+                </div>
+                <br /><br />
+            }
+            @if (!Model.Yorumlar.Any())
+            {
+                <ul class="comment-list">
+                    <h5 class="post-author_head" style="color:red">İlk Yorumu siz yapmak istermisiniz</h5>
+                </ul>
+            }
+            else
+            {
+                foreach (var item in Model.Yorumlar)
+                {
+                    <ul class="comment-list">
+                        <h3 class="post-author_head">@item.KullaniciAdi</h3>
+                        <li>
+                            <img src="~/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p><font size="3">@item.Yorum</font></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
+            }
+
+
+            @Html.Action("PartialYorumYap", "Blog")
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
