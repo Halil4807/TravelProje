@@ -2,7 +2,7 @@
 <div class="content-form">
     <h3>Yorum Yapın</h3>
     <form method="POST">
-        <input type="text" name="Blogid" value="@ViewBag.deger" readonly>
+        <input type="hidden" name="Blogid" value="@ViewBag.deger" readonly>
         <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required />
         <input type="text" placeholder="Email" name="Mail" required />
         <textarea placeholder="Yorum" name="Yorum"></textarea>
